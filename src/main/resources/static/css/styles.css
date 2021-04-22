@@ -4,6 +4,10 @@
     top: 50%;
     transform: translate(-50%, -50%);
 }
+.centred-button button {
+    background-color: cadetblue;
+    color: black;
+}
 
 .modal-content {
     background-color: #fefefe;
@@ -13,7 +17,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     min-width: 600px;
-    min-height: 200px;
+    min-height: 100px;
     max-height: calc(100vh - 20px);
 }
 

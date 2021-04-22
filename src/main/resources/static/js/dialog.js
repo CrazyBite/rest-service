@@ -39,14 +39,19 @@ MyDialog.prototype.onLoadHandler = function() {
     this.dialogModal.style.display = Display.SHOW;
     document.body.classList.add("noScroll")
     this.show = true;
-    this.getText();
+    this.textType = TextTypes.BIG;
+    this.getText(true);
   } else {
     this.onCloseHandler();
   }
 }
 
-MyDialog.prototype.getText = function()  {
-  const type = this.textType === TextTypes.BIG ? TextTypes.SMALL : TextTypes.BIG;
+MyDialog.prototype.getText = function(small = false)  {
+  //  First click on the button inside the pop-up shall trigger long pop-up content load (displayed when it gets loaded)
+  const type =
+    this.textType === TextTypes.BIG || (typeof small === 'boolean' && small)
+    ? TextTypes.SMALL
+    : TextTypes.BIG;
   if (this.hash[type]) {
     this.setText(this.hash[type]);
     this.textType = type;
