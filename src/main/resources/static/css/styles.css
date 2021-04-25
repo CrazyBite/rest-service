@@ -1,3 +1,6 @@
+body{
+    padding: 20px 0 20px 20px;
+}
 .centred-button {
     position: fixed;
     left: 50%;
@@ -40,6 +43,10 @@
     padding-left: 5px;
 }
 
+.modal-content .text {
+    overflow-y: auto;
+    max-height: 90vh;
+}
 .modal-content .actions {
     height: 30px;
     position: fixed;
@@ -50,12 +57,8 @@
     padding-left: 5px;
     padding-top: 5px;
 }
-.modal-content #text {
-    overflow-y: auto;
-    max-height: calc(100vh - 50px);
-}
 
-#close {
+.closer {
     top: 0;
     right: 0;
     position: absolute;
@@ -64,14 +67,14 @@
     font-weight: bold;
 }
 
-#close:hover,
-#close:focus {
+.closer:hover,
+.closer:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
 }
 
-#loader {
+.loader {
     position: absolute;
     top: 50%;
     left: 50%;
