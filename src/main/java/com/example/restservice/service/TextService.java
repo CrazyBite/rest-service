@@ -6,10 +6,20 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
 public class TextService {
+
+    /**
+     * Paths to files
+     */
+    Map<String, String> filePath  = new HashMap<String, String>() {{
+        put("big", "/bigFile.txt");
+        put("small", "/smallFile.txt");
+    }};
 
     /**
      * Open and read file.
@@ -18,7 +28,7 @@ public class TextService {
      * @return file text
      */
     public String getText(String type) {
-        String path = "/" + type + "File.txt"; // not secure :|
+        String path = filePath.get(type);
         InputStream is = getClass().getResourceAsStream(path);
 
         if (is == null) {
